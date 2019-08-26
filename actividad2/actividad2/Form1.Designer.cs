@@ -76,6 +76,8 @@
             this.usuario.Name = "usuario";
             this.usuario.Size = new System.Drawing.Size(346, 20);
             this.usuario.TabIndex = 3;
+            this.usuario.TextChanged += new System.EventHandler(this.Usuario_TextChanged);
+            this.usuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Usuario_KeyPress);
             // 
             // clave
             // 
@@ -84,6 +86,7 @@
             this.clave.Size = new System.Drawing.Size(345, 20);
             this.clave.TabIndex = 4;
             this.clave.TextChanged += new System.EventHandler(this.Clave_TextChanged);
+            this.clave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Clave_KeyPress);
             // 
             // inicio
             // 

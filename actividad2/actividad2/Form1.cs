@@ -34,9 +34,14 @@ namespace actividad2
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if(usuario.Text=="juancho" && clave.Text =="123tamarindo")
+            if (usuario.Text == "juancho" && clave.Text == "123tamarindo")
             {
                 MessageBox.Show("bienvenido Sr juancho");
+                this.Hide();//escondemos ventana login
+                ventana_2 CursosVentana = new ventana_2();
+                CursosVentana.Show();
+                this.Visible = false;
+
             }
             else
             {
@@ -51,6 +56,45 @@ namespace actividad2
         private void Clave_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Clave_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                if (usuario.Text == "juancho" && clave.Text == "123tamarindo")
+                {
+                    MessageBox.Show("bienvenido Sr juancho");
+                    this.Hide();//escondemos ventana login
+                    ventana_2 CursosVentana = new ventana_2();
+                    CursosVentana.Show();
+                    this.Visible = false;
+
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña no valida");
+                    usuario.Text = "";
+                    clave.Text = "";
+                    usuario.Focus();
+                }
+
+
+
+            }
+        }
+
+        private void Usuario_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void Usuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                clave.Focus();
+            }
         }
     }
 }
